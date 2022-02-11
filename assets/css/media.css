@@ -1,0 +1,32 @@
+@media only screen and (min-width: 768px) {
+    #main__div{
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #color__box-main__div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20%;
+    }
+
+    .box{
+        width: 40%;
+        height: 150px;
+        margin: 10px 5px;
+        
+    }
+
+    #color__button-div{
+        position: fixed;
+        top: 0;
+        height: 60px;
+    }
+}
