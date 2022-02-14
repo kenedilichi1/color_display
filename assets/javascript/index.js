@@ -55,16 +55,37 @@ let rainBowColors = document.getElementById("primary__color-button");
 let rainBowColorArray = ['#9400D3', '#4B0082', '#0000FF', '#00FF00', '#FFFF00', '#FF7F00', '#FF0000'];
 rainBowColors.addEventListener('click', rainBow);
 
-// rainbow color function
+
+
+
+
+
+// rainbow color function with fisher-yates algorithim
 
 function rainBow() {
-    boxOne.style.background = rainBowColorArray[Math.floor(Math.random()* rainBowColorArray.length)];
-    boxTwo.style.background = rainBowColorArray[Math.floor(Math.random()* rainBowColorArray.length)];
-    boxThree.style.background = rainBowColorArray[Math.floor(Math.random()* rainBowColorArray.length)];
-    boxFour.style.background = rainBowColorArray[Math.floor(Math.random()* rainBowColorArray.length)];
-    boxFive.style.background = rainBowColorArray[Math.floor(Math.random()* rainBowColorArray.length)];
-    boxSix.style.background = rainBowColorArray[Math.floor(Math.random()* rainBowColorArray.length)];
-    boxSeven.style.background = rainBowColorArray[Math.floor(Math.random()* rainBowColorArray.length)];
+    // first write the fisher-yates algorithim to shuffle the rainBowColorArray
+    function rainBowArry(rainBowColorArray) {
+        let i = rainBowColorArray.length;
+        if(i === 0) return false;
+        while (--i) {
+            let j = Math.floor(Math.random()*(i + 1));
+    
+            let tempi = rainBowColorArray[i];
+            let tempj = rainBowColorArray[j];
+            rainBowColorArray[i] = tempj;
+            rainBowColorArray[j] = tempi;
+        }
+    }
+    
+    rainBowArry(rainBowColorArray);
+
+    boxOne.style.background = rainBowColorArray[0];
+    boxTwo.style.background = rainBowColorArray[1];
+    boxThree.style.background = rainBowColorArray[2];
+    boxFour.style.background = rainBowColorArray[3];
+    boxFive.style.background = rainBowColorArray[4];
+    boxSix.style.background = rainBowColorArray[5];
+    boxSeven.style.background = rainBowColorArray[6];
 
 }
 
